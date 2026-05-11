@@ -551,6 +551,7 @@ if df is not None:
                 generation_config=genai.types.GenerationConfig(
                     temperature=0.3,
                     max_output_tokens=1500,
+                    response_mime_type="application/json"
                 ),
             )
 
