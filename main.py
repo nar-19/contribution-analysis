@@ -132,7 +132,7 @@ if uploaded_file:
             """
 
             try:
-                model = genai.GenerativeModel("gemini-1.5-flash") # Use flash for speed
+                model = genai.GenerativeModel("gemini-2.5-flash") # Use flash for speed
                 response = model.generate_content(prompt)
                 full_analysis = response.text
 
