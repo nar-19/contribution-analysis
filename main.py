@@ -305,7 +305,7 @@ with st.sidebar:
         "HIGH RATINGS → 3–5 ★<br><br>"
         "Upload any CSV/Excel with a<br>"
         "<code style='color:#60a5fa;'>rating</code> column to begin.<br><br>"
-        "Gemini 1.5 Flash identifies the<br>"
+        "Gemini 2.5 Flash identifies the<br>"
         "top 3 factors driving the delta.</div>",
         unsafe_allow_html=True,
     )
@@ -448,7 +448,7 @@ if df is not None:
             <div class="pulse-dot"></div>
             <div>
                 <div class="scan-text">Running diagnostic scan · analysing sentiment vectors…</div>
-                <div class="scan-label">Gemini 1.5 Flash · contribution engine active</div>
+                <div class="scan-label">Gemini 2.5 Flash · contribution engine active</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -544,7 +544,7 @@ if df is not None:
         # ── Call Gemini ─────────────────────────────────────────────────────
         try:
             genai.configure(api_key=gemini_api_key)
-            model = genai.GenerativeModel("gemini-1.5-flash")
+            model = genai.GenerativeModel("gemini-2.5-flash")
 
             response = model.generate_content(
                 prompt,
@@ -591,7 +591,7 @@ if df is not None:
                 "",
                 f"*Recommendation:* {result.get('recommendation', '')}",
                 "",
-                f"_Confidence: {result.get('confidence','n/a').upper()} · Powered by Gemini 1.5 Flash_",
+                f"_Confidence: {result.get('confidence','n/a').upper()} · Powered by Gemini 2.5 Flash_",
             ]
             st.session_state.slack_text = "\n".join(slack_lines)
 
