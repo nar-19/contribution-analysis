@@ -501,7 +501,7 @@ if df is not None:
         Return ONLY valid JSON (no markdown fences, no text outside JSON):
 
         {{
-          "executive_summary": "2-3 sentence summary of the key delta",
+          "executive_summary": "2-3 sentence summary of the key delta (strictly single line, no newlines)",
           "factors": [
             {{
               "rank": 1,
